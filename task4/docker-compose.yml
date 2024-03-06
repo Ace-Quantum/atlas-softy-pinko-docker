@@ -1,0 +1,22 @@
+version: "3.8"
+#I wasn't even able to run these?
+#like I was able to run all the other docker files
+#up to this point
+
+services:
+  back-end:
+    build:
+      context: ./back-end
+    image: softy-pinko-back-end:task4
+    ports:
+    #Why are the ports these ports
+    - "9999:5252"
+
+  front-end:
+    build:
+      context: ./front-end
+    image: softy-pinko-front-end:task4
+    ports:
+      - "9999:9000"
+    depends_on:
+      - back-end
