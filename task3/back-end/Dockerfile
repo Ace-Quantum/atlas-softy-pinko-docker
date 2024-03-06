@@ -6,4 +6,5 @@ RUN pip3 install flask
 RUN pip3 install flask-cors
 WORKDIR /app
 COPY api.py .
+EXPOSE 5252
 CMD echo "Hello, World!"
